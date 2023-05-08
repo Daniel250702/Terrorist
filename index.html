@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hacker-Code</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		.header-image {
+			height: 100vh;
+			width: 100%;
+			object-fit: cover;
+		}
+		body {
+			margin: 0;
+		}
+		.container {
+			text-align: center;
+			position: absolute;
+		    left: 50%; top: 50%;
+			transform: translate(-50%, -50%);
+			color: aliceblue;
+		}
+		.header{
+		height: 50px; 
+		color: aliceblue;
+		position: absolute;
+ 		left: 50%;
+  		transform: translate(-50%, -50%);
+
+		}
+		.button {
+			position: absolute;
+			color: aliceblue;
+			position: absolute;
+ 			left: 50%; top: 5%;
+  			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<script>
+		function checkCode(){
+			if(code-input == 1234){
+				console.log("Gib '...' in die Konsole von Kali Linux ein")
+			}
+			if(code-input != 1234){
+				console.log("falscher Code! Die Polizei hat dich")
+			}
+		}
+		function startTimer() {
+        var duration = 10 * 60 * 1000;
+        var timer = duration, minutes, seconds;
+
+        var intervalId = setInterval(function () {
+          minutes = parseInt(timer / 60000, 10);
+          seconds = parseInt((timer % 60000) / 1000, 10);
+
+          document.getElementById("timer").textContent = "Verbleibende Zeit: " + minutes + " Minuten " + seconds + " Sekunden";
+
+          if (--timer < 0) {
+            clearInterval(intervalId);
+            alert("Die Polizei hat dich gefunden");
+          }
+        }, 1000);
+      }
+	  </script>
+	  <div class="button">
+	  <button onclick="startTimer()">Start</button>
+	  </div>
+	
+	<div class="header">
+		<h1>Hacker</h1>
+	</div>
+	<div class="container">
+		<p>Geben Sie den Code ein:</p>
+		<input type="text" id="code-input">
+		<button onclick="checkCode()">Überprüfen</button>
+	</div>
+
+	<img class="header-image" src="img/Background.jpg">
+	<script src="script.js"></script>
+</body>
+</html> 
